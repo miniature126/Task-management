@@ -13,19 +13,3 @@
  *= require_tree .
  *= require_self
  */
- 
-/* ヘッダー背景色 */
-.navbar {
-  background-color: maroon;
-  color: #FFF;
-}
-
-/* ヘッダーロゴ */
-#logo {
-  text-transform: capitalize;
-  font-style: italic;
-}
-
-#logo:hover {
-  color: gray;
-}

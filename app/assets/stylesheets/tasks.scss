@@ -1,3 +1,23 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* タスク新規作成ボタン */
+.create-task {
+  width: 10.5em;
+  height: 2.7em;
+  margin-bottom: 0px;
+  font-size: 1.2em;
+}
+
+/* タスク一覧項目 */
+.tasks-index-title {
+  font-size: 13px;
+}
+
+/* タスク一覧 */
+#task-title {
+  font-size: 17px;
+  vertical-align: middle;
+}
+
+#task-created-at {
+  vertical-align: middle;
+}

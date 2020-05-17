@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     
   end
 
-S  def show
+  def show
     
   end
 

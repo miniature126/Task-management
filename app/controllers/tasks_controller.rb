@@ -5,6 +5,13 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
+  def new
+    
+  end
+
+S  def show
+    
+  end
 
   private
     def set_user

@@ -1,0 +1,18 @@
+<% provide(:title, "Edit Task") %>
+<h1>タスク編集</h1>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_with(model: @task, url: user_tasks_path(@user), local: true) do |f| %>
+      <%= f.label :name, class: "label-signup" %>
+      <%= f.text_field :name, class: "form-control" %>
+    
+      <%= f.label :content, class: "label-signup" %>
+      <%= f.text_area :content, class: "form-control", id: "area-height" %>
+    
+      <%= f.submit "更新", class: "btn btn-primary btn-signup" %>
+      <%= link_to "キャンセル", '#', class: "btn btn-signup btn-color" %>
+    <% end %>
+
+  </div>
+</div>

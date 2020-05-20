@@ -1,9 +1,7 @@
 <% provide(:title, @user.name) %>
 
 <h1><%= @user.name %>のタスク一覧</h1>
-<div class="btn create-task col-md-2 col-md-offset-9 btn-primary">
-  <p>タスク新規作成</p>
-</div>
+<%=link_to "タスク新規作成", new_user_task_path(current_user), class:"btn create-task col-md-2 col-md-offset-9 btn-primary"%>
 
 <div class="col-md-10 col-md-offset-1 ">
   <table class="table">
@@ -19,8 +17,8 @@
           <td id="task-title"><%= task.name %></td>
           <td id="task-created-at"><%= task.created_at %></td>
           <td>
-            <%= link_to "編集", "#", class: "btn btn-success" %>
-            <%= link_to "削除", "#", class: "btn btn-danger" %>
+            <%= link_to "編集", edit_user_task_path(@user, task), class: "btn btn-success" %>
+            <%= link_to "削除", user_task_path(@user, task), method: :delete, class: "btn btn-danger" %>
           </td>
         </tr>
       <% end %>

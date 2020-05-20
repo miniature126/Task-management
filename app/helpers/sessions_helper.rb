@@ -22,7 +22,7 @@ module SessionsHelper
     @current_user = nil
   end
   
-  # 現在ログイン中のユーザーがいる場合オブジェクトを返す。
+  # 現在ログイン中のユーザーがいる場合オブジェクト(ログイン中ユーザーの情報？)を返す。
   def current_user
     if (user_id = session[:user_id])
       @current_user ||= User.find_by(id: user_id)

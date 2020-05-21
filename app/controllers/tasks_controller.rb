@@ -32,12 +32,13 @@ class TasksController < ApplicationController
   end
 
   def show
-    
+    @task = @user.tasks.find(params[:id])
   end
   
   def destroy
     @task = @user.tasks.find(params[:id])
     @task.destroy
+    flash[:success] = "タスクを削除しました。"
     redirect_to user_tasks_url(@user)
   end
 

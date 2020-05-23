@@ -47,8 +47,14 @@
 }
 
 /* タスク詳細 */
-.table-title td {
+.table-bordered > tbody > tr > .table-title {
   padding: 10px;
   background-color: #eee;
-  vertical-align: middle;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-size {
+  font-size: 17px;
+  padding: 9px 18px;
 }

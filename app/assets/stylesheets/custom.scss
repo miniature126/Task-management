@@ -74,24 +74,24 @@ p {
 }
 
 /* 右側リスト */
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li > .right-menus {
   color: white;
   font-weight: bold;
 }
 
 /* 右側リストホバー時 */
-.navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav > li > .right-menus:hover {
   color: gray;
 }
 
 /* 右側リストオープン且つホバー時*/
-.navbar-inverse .navbar-nav > .open > a:hover, {
+.navbar-inverse .navbar-nav > .open > .right-menus:hover, {
   color: gray;
 }
 
 /* 右側リストオープン且つ非ホバー時 */
-.navbar-inverse .navbar-nav > .open > a,
-.navbar-inverse .navbar-nav > .open > a:focus {
+.navbar-inverse .navbar-nav > .open > .right-menus,
+.navbar-inverse .navbar-nav > .open > .right-menus:focus {
   background-color: transparent;
 }
 

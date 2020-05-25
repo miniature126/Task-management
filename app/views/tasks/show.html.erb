@@ -15,7 +15,7 @@
         </tr>
         <tr>
           <td class="table-title col-md-2">詳細</td>
-          <td><%= @task.content %></td>
+          <td><%= text_url_to_link(h(@task.content)).html_safe %></td>
         </tr>
         <tr>
           <td class="table-title col-md-2">作成日</td>

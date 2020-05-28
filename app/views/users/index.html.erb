@@ -2,7 +2,7 @@
 <h1>利用者一覧</h1>
 
 <div class="col-md-10 col-md-offset-1">
-  <table class="table">
+  <table class="table table-hover">
     <thead class="users-index-title">
       <th><%= User.human_attribute_name :name %></th>
     </thead>
@@ -10,12 +10,23 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <td id="user-name"><%= link_to "#{user.name}", user_path(user) %></td>
-          <td id="user-delete-btn">
-            <%= link_to "削除", user_path(user), method: :delete,
-                data: { confirm: "#{user.name}を削除します。よろしいですか？" },
-                class: "btn btn-danger" %>
-          </td>
+          <% if user.admin? %>
+            <td id="user-name">
+              <%= link_to "#{user.name}", user_path(user) %>&nbsp;
+              <span class="label label-primary">管理者</span>
+            </td>
+            <td></td>
+          <% else %>
+            <td id="user-name">
+              <%= link_to "#{user.name}", user_path(user) %>&nbsp;
+              <span class="label label-success">一般</span>
+            </td>
+            <td id="user-delete">
+              <%= link_to "削除", user_path(user), method: :delete,
+                  data: { confirm: "#{user.name}を削除します。よろしいですか？" },
+                  class: "btn btn-danger user-delete-btn" %>
+            </td>
+          <% end %>
         </tr>
       <% end %>
     </tbody>

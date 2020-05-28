@@ -1,4 +1,4 @@
-
+/* ユーザー情報登録 */
 .label-signup {
   margin-top: 5px;
 }
@@ -7,6 +7,7 @@
   margin-top: 10px;
 }
 
+/* ユーザー情報編集 */
 .label-user--edit {
   margin-top: 5px;
 }
@@ -14,3 +15,21 @@
 .btn-user--edit {
   margin-top: 10px;
 }
+
+/* ユーザー一覧 */
+.table tbody > tr > #user-name {
+  padding: 7px;
+  vertical-align: middle;
+}
+
+.table tbody > tr > #user-delete {
+  padding: 5px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+.user-delete-btn {
+  font-size: 11px;
+  padding: 8px 10px;
+} 
+

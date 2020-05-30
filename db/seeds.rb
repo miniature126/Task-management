@@ -6,7 +6,7 @@ User.create!( name: "管理者",
               password_confirmation: "password",
               admin: true)
               
-10.times do |n|
+99.times do |n|
   name = Faker::Name.name
   email = "sample-#{n+1}@email.com"
   password = "password"
@@ -18,7 +18,7 @@ end
 
 3.times do |u|
   @user = User.find(u+1)
-  2.times do |t|
+  50.times do |t|
     task_name = "task#{t+1}"
     task_content = "#{task_name}詳細"
     Task.create!(name: task_name,

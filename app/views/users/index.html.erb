@@ -11,17 +11,15 @@
     <tbody>
       <% @users.each do |user| %>
         <tr>
-          <% if user.admin? %>
-            <td id="user-name">
-              <%= link_to "#{user.name}", user_path(user) %>&nbsp;
+          <td id="user-name">
+            <%= link_to "#{user.name}", user_path(user) %>&nbsp;
+            <% if user.admin? %>
               <span class="label label-primary">管理者</span>
-            </td>
-            <td></td>
-          <% else %>
-            <td id="user-name">
-              <%= link_to "#{user.name}", user_path(user) %>&nbsp;
+            <% else %>
               <span class="label label-success">一般</span>
-            </td>
+            <% end %>
+          </td>
+          <% if current_user.admin? && !current_user?(user) %>
             <td id="user-delete">
               <%= link_to "削除", user_path(user), method: :delete,
                   data: { confirm: "#{user.name}を削除します。よろしいですか？" },

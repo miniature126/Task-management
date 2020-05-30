@@ -5,9 +5,9 @@
     <div class="app_explanation">
       <p>TaskAppは簡易ToDo管理ツールです。</p>
       <p>↓↓初めてのご利用↓↓</p>
-      <% if logged_in? %>
+      <% if logged_in? && !current_user.admin? %> <%# ログインしていてかつ一般ユーザー %>
         <p><%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success disabled" %></p>
-      <% else %>
+      <% elsif !logged_in? || current_user.admin? %> <%# ログインしていないもしくは管理者ユーザー %>
         <p><%= link_to "アカウント作成", signup_path, class: "btn btn-lg btn-success" %></p>
       <% end %>
     </div>

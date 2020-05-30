@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
-  before_action :set_user
+  before_action :set_task_user
   
   def index
-    @tasks = Task.all
+    @tasks = Task.where(user_id: params[:user_id])
   end
 
   def new
@@ -45,8 +45,8 @@ class TasksController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find_by(params[:user_id])
+    def set_task_user
+      @user = User.find(params[:user_id])
     end
     
     # strong parameter

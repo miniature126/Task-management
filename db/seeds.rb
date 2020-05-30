@@ -20,7 +20,7 @@ end
   @user = User.find(u+1)
   2.times do |t|
     task_name = "task#{t+1}"
-    task_content = Faker::Lorem.sentence(5)
+    task_content = "#{task_name}詳細"
     Task.create!(name: task_name,
                  content: task_content,
                  user_id: @user.id)

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: [:index, :destroy]
   
   def index
     @users = User.paginate(page: params[:page], per_page: 20)
@@ -72,5 +73,10 @@ class UsersController < ApplicationController
         flash[:danger] = "このユーザーは編集できません。"
         redirect_to user_url(@user)
       end
+    end
+    
+    #システム管理権限所有かどうかを判定
+    def admin_user
+      redirect_to root_url unless current_user.admin?
     end
 end

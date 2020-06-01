@@ -58,7 +58,7 @@ class TasksController < ApplicationController
       end
     end
 
-    #アクセスしたユーザーが現在ログインしているユーザーと同じか確認
+    #アクセスしたユーザーが現在ログインしているユーザーと同じかを確認
     def correct_user
       redirect_to root_url unless @user == current_user
     end

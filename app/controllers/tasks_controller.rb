@@ -1,9 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_user
-  # before_action :admin_user
-  # before_action :logged_in_user
-  # before_action :correct_user
-  # before_action :admin_or_correct_user
+  before_action :admin_user
+  before_action :logged_in_user
+  before_action :correct_user
+  before_action :admin_or_correct_user
   
   def index
     @tasks = Task.where(user_id: params[:user_id])

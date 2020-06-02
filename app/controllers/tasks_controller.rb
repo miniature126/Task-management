@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   before_action :correct_user
   
   def index
-    @tasks = Task.where(user_id: params[:user_id])
+    @tasks = Task.where(user_id: params[:user_id]).order(id: "DESC")
   end
 
   def new

@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー
       task: タスク
+      
     attributes:
         user:
           id: ID
@@ -17,3 +18,5 @@ ja:
   attributes:
     created_at: 作成日
     updated_at: 更新
+    email: メールアドレス
+    password: パスワード

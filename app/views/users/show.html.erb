@@ -19,7 +19,7 @@
         </tr>
         <tr>
           <td class="table-title col-md-3">作成日</td>
-          <td><%= @user.created_at %></td>
+          <td><%= l(@user.created_at, format: :long) %></td>
         </tr>
       </tbody>
     </table>

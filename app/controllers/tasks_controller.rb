@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_user
   before_action :logged_in_user
-  before_action :correct_user
+  before_action :correct_user, except: [:edit, :update]
   
   def index
     @tasks = Task.where(user_id: params[:user_id]).order(id: "DESC")
@@ -22,6 +22,10 @@ class TasksController < ApplicationController
   end
   
   def edit
+    unless current_user?(@user)
+      flash[:danger] = "権限がありません。"
+      redirect_to user_tasks_url(@user)
+    end
     @task = @user.tasks.find(params[:id])
   end
   
@@ -29,7 +33,7 @@ class TasksController < ApplicationController
     @task = @user.tasks.find(params[:id])
     if @task.update_attributes(task_params)
       flash[:success] = "タスクを更新しました。"
-      redirect_to user_tasks_url(@user)
+      redirect_to user_task_url(@user, @task)
     else
       render :edit
     end
@@ -62,6 +66,7 @@ class TasksController < ApplicationController
     def correct_user
       redirect_to root_url unless @user == current_user
     end
+    
     
     # strong parameter
     def task_params
